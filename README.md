@@ -1,3 +1,6 @@
+# Looking Glass FORK ONLY IPv6 - NO DOCKER
+
+
 # Looking Glass
 Modern, simple and fresh looking glass based on Bootstrap 5 and PHP 8 (also compatible with 7). A looking glass is a network utility which is
 made user-friendly for everyone to use. It allows you to execute network related commands within a remote network, usually that of an ISP.
