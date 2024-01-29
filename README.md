@@ -5,6 +5,7 @@ made user-friendly for everyone to use. It allows you to execute network related
 I'm not a big fan of docker so I decided to make this fork to be free with a simple bash script that installs everything.
 The project has been reworked to display Looking Glass only ipv6
 
+Warning : csrfToken is disable
 
 [![](screenshot.png)](https://lg-nl-ams.hybula.net/)
 
