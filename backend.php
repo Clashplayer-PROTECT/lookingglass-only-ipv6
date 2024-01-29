@@ -29,20 +29,11 @@ if (isset($_SESSION[LookingGlass::SESSION_TARGET_HOST]) &&
 
 
     switch ($_SESSION[LookingGlass::SESSION_TARGET_METHOD]) {
-        case LookingGlass::METHOD_PING:
-            LookingGlass::ping($_SESSION[LookingGlass::SESSION_TARGET_HOST]);
-            break;
         case LookingGlass::METHOD_PING6:
             LookingGlass::ping6($_SESSION[LookingGlass::SESSION_TARGET_HOST]);
             break;
-        case LookingGlass::METHOD_MTR:
-            LookingGlass::mtr($_SESSION[LookingGlass::SESSION_TARGET_HOST]);
-            break;
         case LookingGlass::METHOD_MTR6:
             LookingGlass::mtr6($_SESSION[LookingGlass::SESSION_TARGET_HOST]);
-            break;
-        case LookingGlass::METHOD_TRACEROUTE:
-            LookingGlass::traceroute($_SESSION[LookingGlass::SESSION_TARGET_HOST]);
             break;
         case LookingGlass::METHOD_TRACEROUTE6:
             LookingGlass::traceroute6($_SESSION[LookingGlass::SESSION_TARGET_HOST]);

@@ -54,7 +54,6 @@ $templateData           = [
     'maps_query'               => LG_MAPS_QUERY,
     'facility'                 => LG_FACILITY,
     'facility_url'             => LG_FACILITY_URL,
-    'ipv4'                     => LG_IPV4,
     'ipv6'                     => LG_IPV6,
     'methods'                  => LG_METHODS,
     'user_ip'                  => LookingGlass::detectIpAddress(),

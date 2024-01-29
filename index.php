@@ -18,11 +18,6 @@ use Hybula\LookingGlass;
 
 $errorMessage = null;
 if (!empty($_POST)) {
-    /**
-    if (!isset($_POST['csrfToken']) || !isset($_SESSION[LookingGlass::SESSION_CSRF]) || ($_POST['csrfToken'] !== $_SESSION[LookingGlass::SESSION_CSRF])) {
-        exitErrorMessage('Missing or incorrect CSRF token.');
-    }
-     */
 
     if (!isset($_POST['submitForm']) || !isset($_POST['backendMethod']) || !isset($_POST['targetHost'])) {
         exitErrorMessage('Unsupported POST received.');
@@ -38,14 +33,6 @@ if (!empty($_POST)) {
         exitErrorMessage('You must agree with the Terms of Service.');
     }
 
-    $targetHost = $_POST['targetHost'];
-    if (in_array($_POST['backendMethod'], ['ping', 'mtr', 'traceroute'])) {
-        if (!LookingGlass::isValidIpv4($_POST['targetHost']) &&
-            !$targetHost = LookingGlass::isValidHost($_POST['targetHost'], LookingGlass::IPV4)
-        ) {
-            exitErrorMessage('No valid IPv4 provided.');
-        }
-    }
 
     if (in_array($_POST['backendMethod'], ['ping6', 'mtr6', 'traceroute6'])) {
         if (!LookingGlass::isValidIpv6($_POST['targetHost']) &&
@@ -172,13 +159,6 @@ $templateData['csrfToken'] = $_SESSION[LookingGlass::SESSION_CSRF] = bin2hex(ran
                     </div>
 
                     <div class="row mb-3">
-                        <div class="col-md-3">
-                            <label class="mb-2 text-muted">Test IPv4</label>
-                            <div class="input-group">
-                                <input type="text" class="form-control" value="<?php echo $templateData['ipv4'] ?>" onfocus="this.select()" readonly="">
-                                <button class="btn btn-outline-secondary" onclick="copyToClipboard('<?php echo $templateData['ipv4'] ?>', this)">Copy</button>
-                            </div>
-                        </div>
                         <div class="col-md-5">
                             <label class="mb-2 text-muted">Test IPv6</label>
                             <div class="input-group">
@@ -186,7 +166,7 @@ $templateData['csrfToken'] = $_SESSION[LookingGlass::SESSION_CSRF] = bin2hex(ran
                                 <button class="btn btn-outline-secondary" onclick="copyToClipboard('<?php echo $templateData['ipv6'] ?>', this)">Copy</button>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-7">
                             <label class="mb-2 text-muted">Your IP</label>
                             <div class="input-group">
                                 <input type="text" class="form-control" value="<?php echo $templateData['user_ip'] ?>" onfocus="this.select()" readonly="">

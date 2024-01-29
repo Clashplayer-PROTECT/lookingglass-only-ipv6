@@ -47,7 +47,8 @@ const LG_MAPS_QUERY = 'Amsterdam, Netherlands';
 const LG_FACILITY = 'Nikhef';
 // Define a direct link to more information about the facility, this should be a link to PeeringDB;
 const LG_FACILITY_URL = 'https://www.peeringdb.com/fac/18';
-
+// Define an IPv4 for testing;
+const LG_IPV4 = '127.0.0.1';
 // Define an IPv6 for testing;
 const LG_IPV6 = '::1';
 
