@@ -18,9 +18,11 @@ use Hybula\LookingGlass;
 
 $errorMessage = null;
 if (!empty($_POST)) {
+    /**
     if (!isset($_POST['csrfToken']) || !isset($_SESSION[LookingGlass::SESSION_CSRF]) || ($_POST['csrfToken'] !== $_SESSION[LookingGlass::SESSION_CSRF])) {
         exitErrorMessage('Missing or incorrect CSRF token.');
     }
+     */
 
     if (!isset($_POST['submitForm']) || !isset($_POST['backendMethod']) || !isset($_POST['targetHost'])) {
         exitErrorMessage('Unsupported POST received.');
