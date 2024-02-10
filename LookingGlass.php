@@ -89,9 +89,6 @@ class LookingGlass
         if (!defined('LG_FACILITY_URL')) {
             die('LG_FACILITY_URL not found in config.php');
         }
-        if (!defined('LG_IPV4')) {
-            die('LG_IPV4 not found in config.php');
-        }
         if (!defined('LG_IPV6')) {
             die('LG_IPV6 not found in config.php');
         }
